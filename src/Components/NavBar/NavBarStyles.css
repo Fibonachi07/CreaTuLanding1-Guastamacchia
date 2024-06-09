@@ -1,0 +1,33 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+  }
+  
+  nav img {
+    margin-left: 1.5rem;
+  }
+  
+  nav select {
+    max-width: 15%;
+    border-radius: 10px;
+    background-color: black;
+    appearance: none;
+    position: relative;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5H7z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 1rem;
+    color: white;
+    font-size: 1.125rem;
+    text-align: center;
+    padding: 15px 30px 15px 10px; /* Aumenta el padding derecho para dejar espacio para la flecha */
+  }
+  
+  nav svg {
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+    color: white;
+  }
+  
