@@ -1,0 +1,27 @@
+.container {
+    background-color: bisque;
+    padding: 1rem;
+    flex-basis: 350px;
+    max-height: 550px;
+    
+}
+
+.itemName {
+    padding-left: 0;
+    color: #d49d2f;
+    display: inherit;
+}
+
+img {
+    border-radius: 10px;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+p {
+    margin-bottom: 0;
+    max-width: 40ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
