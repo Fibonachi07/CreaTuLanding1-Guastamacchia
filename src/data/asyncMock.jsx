@@ -17,7 +17,7 @@ export const productos = [
       stock: 5,
       descripcion:
         "100% Cuero Negro",
-      img: "../src/assets/roma.jpg",
+      img: "../src/assets/roma.jpg"
     },
     {
       id: 3,
@@ -49,6 +49,37 @@ export const productos = [
         "Billetera con tarjetero",
       img: "../src/assets/letino.jpg",
     },
+    {
+      id: 6,
+      nombre: "TOKYO",
+      precio: 27200,
+      categoria: "Billeteras",
+      stock: 5,
+      descripcion:
+        "Billetera 100% Eco cuero",
+      img: "../src/assets/billetera.webp",
+    },
+    {
+      id: 7,
+      nombre: "MILÁN",
+      precio: 55900,
+      categoria: "Bolsos",
+      stock: 5,
+      descripcion:
+        "100% Cuero Negro",
+      img: "../src/assets/milan.webp"
+    },
+    {
+      id: 7,
+      nombre: "GENOVA",
+      precio: 53100,
+      categoria: "Cartera",
+      stock: 0,
+      descripcion:
+        "100% Cuero Negro",
+      img: "../src/assets/genova.webp"
+    }
+
   ];
   
 
