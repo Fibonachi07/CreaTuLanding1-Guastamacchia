@@ -2,18 +2,18 @@ import { useState } from 'react';
 import './App.css';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import NavBar from './Components/NavBar/NavBar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
-  const [selectedOption, setSelectedOption] = useState('Billeteras');
-
-  const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
-
   return (
     <>
-      <NavBar onOptionChange={handleOptionChange} />
-      <ItemListContainer title={`Estás viendo nuestras ${selectedOption}`} />
+    <BrowserRouter>
+    <NavBar/>
+    <Routes>
+      <Route path='/' element />
+      <Route path='/categoria/:categoryId' element={<ItemListContainer/>} />
+    </Routes>
+    </BrowserRouter>
     </>
   );
 }
