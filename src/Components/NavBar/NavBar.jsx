@@ -16,9 +16,9 @@ const NavBar = () => {
       <nav>
         <img src="../src/assets/Letino-logo.png" alt="Letino-logo" />
         <Select onChange={handleChange}>
-          <option to='/categoria/Billeteras'>Billeteras</option>
-          <option to='/categoria/Carteras'>Carteras</option>
-          <option to='/categoria/Bolsos'>Bolsos</option>
+          <option value='/categoria/Billeteras'>Billeteras</option>
+          <option value='/categoria/Carteraa'>Carteras</option>
+          <option value='/categoria/Bolsos'>Bolsos</option>
         </Select>
         <CartWidget />
       </nav>
