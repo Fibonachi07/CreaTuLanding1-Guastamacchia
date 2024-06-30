@@ -12,7 +12,8 @@ nav {
   nav select {
     max-width: 15%;
     border-radius: 10px;
-    background-color: black;
+    background-color: rgb(81, 72, 72);
+    box-shadow: 0 0 4px 0 rgb(92, 89, 89);
     appearance: none;
     position: relative;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5H7z"/></svg>');
@@ -30,4 +31,3 @@ nav {
     margin-right: 1.5rem;
     color: white;
   }
-  

@@ -1,29 +1,34 @@
-import React, { useEffect, useState } from 'react'
-import './ItemListContainer.css'
-import ItemList from '../ItemList/ItemList'
-import { getProducts, getProductsByCategory } from '../../data/asyncMock'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import './ItemListContainer.css';
+import ItemList from '../ItemList/ItemList';
+import { getProducts, getProductsByCategory } from '../../data/asyncMock';
+import { useParams } from 'react-router-dom';
 
-const ItemListContainer = ({title}) => {
-  const [productos, setProductos] = useState([])
-  const { categoryId } = useParams()
+const ItemListContainer = ({ title }) => {
+  const [productos, setProductos] = useState([]);
+  const { categoryId } = useParams();
 
   useEffect(() => {
-    const dataProducts = categoryId ? getProductsByCategory(categoryId) : getProducts()
+    const fetchData = async () => {
+      try {
+        const dataProducts = categoryId ? await getProductsByCategory(categoryId) : await getProducts();
+        setProductos(dataProducts);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
 
-    dataProducts
-    .then((prod) => setProductos(prod))
-    .catch((err) => console.log(err))
-  }, [categoryId])
+    fetchData();
+  }, [categoryId]);
 
   return (
     <div className='mainContainer'>
       <h1>{title}</h1>
-    <div className="productContainer">
-      <ItemList productos={productos} />
+      <div className="productContainer">
+        <ItemList productos={productos} />
+      </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default ItemListContainer
+export default ItemListContainer;
