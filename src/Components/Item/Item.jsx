@@ -1,20 +1,15 @@
 import React from 'react';
 import './ItemStyles.css';
-import ItemCount from './ItemCount';
+import { Link } from 'react-router-dom';
 
-const Item = ({ id, nombre, precio, img, descripcion, stock }) => {
-  const handleAddToCart = (quantity) => {
-    console.log(`Agregar ${quantity} items al carrito`);
-  };
+const Item = ({id, nombre, img, stock}) => {
 
   return (
     <div key={id} className='container'>
       <h1 className='itemName'>{nombre}</h1>
       <img src={img} alt={nombre} />
-      <p>{descripcion}</p>
-      <p>${precio}</p>
-      <p>Stock: {stock}</p>
-      <ItemCount stock={stock} initial={1} onAdd={handleAddToCart} />
+      <p className='stock'>Stock: {stock}</p>
+      <button className='Details'><Link to={`/producto/${id}`}>Ver detalles</Link></button>
     </div>
   );
 };

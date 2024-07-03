@@ -15,6 +15,7 @@ const NavBar = () => {
       <nav>
         <img src="../src/assets/Letino-logo.png" alt="Letino-logo" />
         <select className='Select' onChange={handleChange}>
+        <option value='/'>Categorías</option>
           <option value='/categoria/Billeteras'>Billeteras</option>
           <option value='/categoria/Carteras'>Carteras</option>
           <option value='/categoria/Bolsos'>Bolsos</option>

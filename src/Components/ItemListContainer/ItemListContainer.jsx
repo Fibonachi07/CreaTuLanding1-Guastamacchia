@@ -3,29 +3,27 @@ import './ItemListContainer.css';
 import ItemList from '../ItemList/ItemList';
 import { getProducts, getProductsByCategory } from '../../data/asyncMock';
 import { useParams } from 'react-router-dom';
+import { DotLoader } from 'react-spinners';
+import { Flex } from '@chakra-ui/react';
 
 const ItemListContainer = ({ title }) => {
   const [productos, setProductos] = useState([]);
   const { categoryId } = useParams();
+  const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const dataProducts = categoryId ? await getProductsByCategory(categoryId) : await getProducts();
-        setProductos(dataProducts);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, [categoryId]);
+    setLoading(true)
+    const dataProducts = categoryId ? getProductsByCategory(categoryId) : getProducts()
+    dataProducts.then((prod) => setProductos(prod)).finally(() => setLoading(false))
+  }, [categoryId])
 
   return (
     <div className='mainContainer'>
-      <h1>{title}</h1>
       <div className="productContainer">
-        <ItemList productos={productos} />
+      <Flex justify={'center'} align={'center'}>
+        { loading ? <DotLoader color="#ffe4c4" /> : <ItemList productos={productos} />}
+      </Flex>
       </div>
     </div>
   );

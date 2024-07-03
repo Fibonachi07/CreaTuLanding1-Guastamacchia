@@ -70,7 +70,7 @@ export const productos = [
       img: "../src/assets/milan.webp"
     },
     {
-      id: 7,
+      id: 8,
       nombre: "GENOVA",
       precio: 53100,
       categoria: "Cartera",
@@ -87,7 +87,7 @@ export const getProducts = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(productos)
-        }, 2000)
+        }, 1000)
     })
 }
 
@@ -96,8 +96,17 @@ export const getProductsByCategory = (categoria) => {
     const filterProducts = productos.filter((prod) => prod.categoria === categoria)
     setTimeout(() => {
       resolve(filterProducts), 
-      2500
+      1500
     })
 
+  })
+}
+
+export const getProductsById = (id) => {
+  return new Promise ((resolve) => {
+    const productById = productos.find((prod) => prod.id === parseInt(id))
+    setTimeout(() => {
+      resolve(productById)
+    }, 2000)
   })
 }
