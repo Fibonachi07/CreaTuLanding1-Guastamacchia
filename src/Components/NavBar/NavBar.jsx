@@ -2,7 +2,7 @@ import React from 'react';
 import CartWidget from '../CartWidget/CartWidget';
 import './NavBarStyles.css';
 import { useNavigate } from 'react-router-dom';
-import { Select } from '@chakra-ui/react'
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const NavBar = () => {
   return (
     <header>
       <nav>
-        <img src="../src/assets/Letino-logo.png" alt="Letino-logo" />
+        <Link to={`/`}><img src="../src/assets/Letino-logo.png" alt="Letino-logo" /></Link>
         <select className='Select' onChange={handleChange}>
         <option value='/'>Categorías</option>
           <option value='/categoria/Billeteras'>Billeteras</option>
